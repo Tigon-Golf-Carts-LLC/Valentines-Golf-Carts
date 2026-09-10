@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Holiday Golf Carts"
+description = "A nationwide holiday golf cart sales event and dealership website with live DMS inventory, brand and model browsing, dealership locations, financing, and a complete U.S. holiday calendar."
+version = "1.0.0"
+id = "artifacts/holiday-golf-carts"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18543
+
+[services.development]
+run = "pnpm --filter @workspace/holiday-golf-carts run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/holiday-golf-carts", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/holiday-golf-carts/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18543"
+BASE_PATH = "/"
