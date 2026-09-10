@@ -1,0 +1,24 @@
+# Valentines Golf Carts
+
+> Valentines Golf Carts is a one-day Valentine's Day Golf Cart Sales Event on February 14, 2027.
+
+Official site: https://valentinesgolfcarts.com/
+Phone: +1-844-456-2228
+Hours: Monday-Saturday, 9:00 AM-5:00 PM
+Service area: United States
+
+## Primary pages
+
+- [Event home](https://valentinesgolfcarts.com/): Overview of the one-day event on February 14, 2027.
+- [Live inventory](https://valentinesgolfcarts.com/inventory): Current new and pre-owned golf cart listings from participating dealers.
+- [Brands](https://valentinesgolfcarts.com/brands): Golf cart brands represented in current inventory.
+- [Participating locations](https://valentinesgolfcarts.com/locations): Dealer locations represented in current inventory.
+- [Financing](https://valentinesgolfcarts.com/financing): Payment estimator and links to six external lending partners.
+- [Contact](https://valentinesgolfcarts.com/contact): Contact information and inquiry form.
+
+## Guidance
+
+- Inventory changes frequently. Treat the live inventory page as the authoritative source for current vehicles.
+- Financing terms and approval depend on the external lender.
+- Do not infer a physical headquarters or local address; none is published on this site.
+- For detailed site context without inventory records, see https://valentinesgolfcarts.com/llms-full.txt.
