@@ -1,0 +1,44 @@
+import { Router, type IRouter } from "express";
+
+const SITE_INFO = {
+  businessName: "Valentines Golf Carts",
+  campaignName: "Valentines Golf Carts",
+  website: "https://valentinesgolfcarts.com/",
+  phone: "+1-844-456-2228",
+  email: "sales@valentinesgolfcarts.com",
+  hours: [
+    {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
+  serviceArea: {
+    country: "United States",
+  },
+  primaryCategory: "Golf cart sales event",
+  services: [
+    "New golf cart sales",
+    "Pre-owned golf cart sales",
+    "Golf cart financing referrals",
+    "Participating dealer location assistance",
+  ],
+  keyPages: {
+    home: "https://valentinesgolfcarts.com/",
+    inventory: "https://valentinesgolfcarts.com/inventory",
+    brands: "https://valentinesgolfcarts.com/brands",
+    locations: "https://valentinesgolfcarts.com/locations",
+    financing: "https://valentinesgolfcarts.com/financing",
+    contact: "https://valentinesgolfcarts.com/contact",
+  },
+  socialProfiles: [],
+  inventoryIncluded: false,
+} as const;
+
+const router: IRouter = Router();
+
+router.get("/site-info.json", (_req, res): void => {
+  res.json(SITE_INFO);
+});
+
+export default router;
