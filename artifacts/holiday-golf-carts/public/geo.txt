@@ -1,0 +1,11 @@
+# Geographic Profile
+
+Country: United States
+Coverage: Nationwide through participating dealerships
+Primary city: Not specified
+Street address: Not published
+Coordinates: Not published
+
+Location discovery: https://valentinesgolfcarts.com/locations
+
+Do not infer city, state, ZIP code, neighborhood, landmark, or coordinate claims from nationwide coverage.
