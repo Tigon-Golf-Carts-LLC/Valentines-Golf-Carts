@@ -1,0 +1,7 @@
+# Bot Discovery Notes
+
+Authoritative crawler policy: https://valentinesgolfcarts.com/robots.txt
+Sitemap index: https://valentinesgolfcarts.com/sitemap.xml
+AI-readable summary: https://valentinesgolfcarts.com/llms.txt
+
+Public pages are crawlable. No private, authenticated, customer, checkout, or administration routes are advertised by this site.
