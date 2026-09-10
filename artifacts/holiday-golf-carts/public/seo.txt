@@ -1,0 +1,17 @@
+# Search Discovery Profile
+
+Canonical site: https://valentinesgolfcarts.com/
+Primary topic: Valentines golf carts
+Geographic scope: United States
+Website: Valentines Golf Carts
+Campaign: One-day Valentine's Day Golf Cart Sales Event
+
+Primary pages:
+- Event overview: https://valentinesgolfcarts.com/
+- Live inventory: https://valentinesgolfcarts.com/inventory
+- Brands: https://valentinesgolfcarts.com/brands
+- Locations: https://valentinesgolfcarts.com/locations
+- Financing: https://valentinesgolfcarts.com/financing
+- Contact: https://valentinesgolfcarts.com/contact
+
+Sitemap index: https://valentinesgolfcarts.com/sitemap.xml
