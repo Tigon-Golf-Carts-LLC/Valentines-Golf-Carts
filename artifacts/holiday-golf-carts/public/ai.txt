@@ -1,0 +1,9 @@
+# AI Access Information
+
+Site: https://valentinesgolfcarts.com/
+Website: Valentines Golf Carts
+Campaign: Valentines Golf Carts
+
+Public pages may be crawled according to robots.txt. Prefer llms.txt and llms-full.txt for concise factual context. Current vehicle availability must be verified against the live inventory page.
+
+This file does not grant ownership, privacy, trademark, copyright, or data-use rights beyond those provided by applicable law and the site's published terms. Do not infer customer information, unpublished inventory, a physical address, or local service claims.
