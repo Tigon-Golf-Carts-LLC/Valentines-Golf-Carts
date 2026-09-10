@@ -1,0 +1,10 @@
+# Accessibility Information
+
+Valentines Golf Carts is designed with semantic navigation, labeled form controls, keyboard-visible interactive elements, and descriptive text alternatives where applicable.
+
+Accessibility feedback:
+- Email: sales@valentinesgolfcarts.com
+- Phone: +1-844-456-2228
+- Hours: Monday-Saturday, 9:00 AM-5:00 PM
+
+This statement does not claim certification against a specific accessibility standard.
