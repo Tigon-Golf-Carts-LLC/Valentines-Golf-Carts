@@ -1,0 +1,10 @@
+# Crawler Resources
+
+Robots policy: https://valentinesgolfcarts.com/robots.txt
+Page sitemap: https://valentinesgolfcarts.com/sitemap-pages.xml
+Image sitemap: https://valentinesgolfcarts.com/sitemap-images.xml
+Business profile: https://valentinesgolfcarts.com/api/site-info.json
+LLM summary: https://valentinesgolfcarts.com/llms.txt
+Detailed LLM context: https://valentinesgolfcarts.com/llms-full.txt
+
+Use the live inventory route for current availability. Do not retain an inventory count from these discovery files.
