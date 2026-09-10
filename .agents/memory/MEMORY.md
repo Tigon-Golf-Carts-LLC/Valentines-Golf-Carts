@@ -1,0 +1,2 @@
+- [DMS inventory pagination](dms-inventory-pagination.md) — the upstream cart API enforces small pages even when a larger page size is requested; fetch every reported page.
+- [Static inventory URLs](static-inventory-urls.md) — on the custom domain, static inventory snapshots must resolve from the site root, not the current SPA route.
