@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Crisp Valentine's Light Theme */
+  --background: 0 0% 100%;
+  --foreground: 340 30% 10%;
+
+  --border: 340 10% 90%;
+  --input: 340 10% 90%;
+  --ring: 348 83% 47%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 340 30% 10%;
+  --card-border: 340 10% 90%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 340 30% 10%;
+  --popover-border: 340 10% 90%;
+
+  --primary: 348 83% 47%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 340 20% 96%;
+  --secondary-foreground: 340 30% 10%;
+
+  --muted: 340 20% 96%;
+  --muted-foreground: 340 20% 40%;
+
+  --accent: 348 83% 47%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --radius: 0.25rem;
+}
+
+.dark {
+  /* Deep Wine Dark Theme */
+  --background: 340 50% 6%;
+  --foreground: 0 0% 100%;
+
+  --border: 340 30% 20%;
+  --input: 340 30% 20%;
+  --ring: 348 83% 47%;
+
+  --card: 340 40% 10%;
+  --card-foreground: 0 0% 100%;
+  --card-border: 340 30% 20%;
+
+  --popover: 340 40% 10%;
+  --popover-foreground: 0 0% 100%;
+  --popover-border: 340 30% 20%;
+
+  --primary: 348 83% 47%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 340 30% 14%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 340 30% 14%;
+  --muted-foreground: 340 20% 65%;
+
+  --accent: 348 83% 47%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight font-semibold uppercase;
+  }
+}
+
+.text-ruby-gradient {
+  color: hsl(var(--primary));
+}
+
+.bg-ruby-gradient {
+  background-color: hsl(var(--primary));
+}
+
+.bg-grid-white {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.bg-grid-black {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.valentines-heart-text {
+  display: inline-block;
+  color: hsl(var(--primary));
+}
+
+.valentines-heart-letter {
+  position: relative;
+  display: inline-block;
+  color: hsl(var(--primary));
+}
+
+.valentines-heart-source::after {
+  position: absolute;
+  left: 50%;
+  bottom: 72%;
+  z-index: 2;
+  color: hsl(var(--primary));
+  content: "♥";
+  font-family: Arial, sans-serif;
+  font-size: 0.18em;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0) scale(0.75);
+}
+
+@keyframes letter-heart-rise {
+  0%,
+  35% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.7) rotate(-8deg);
+  }
+  45% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + (var(--wave-index) - 4) * 0.06em), -1.15em)
+      scale(1.05) rotate(8deg);
+  }
+}
+
+@keyframes heart-beat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .valentines-heart-source::after {
+    animation: letter-heart-rise 3.2s ease-out infinite;
+    animation-delay: calc(var(--wave-index) * 160ms);
+  }
+
+  .animate-heart-beat {
+    animation: heart-beat 2s infinite;
+    transform-origin: center;
+  }
+}
