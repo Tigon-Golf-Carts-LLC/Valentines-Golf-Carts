@@ -1,0 +1,13 @@
+# Image Discovery
+
+Primary campaign artwork:
+- https://valentinesgolfcarts.com/hero_2.jpg
+- https://valentinesgolfcarts.com/lineup_2.jpg
+- https://valentinesgolfcarts.com/logo_2.png
+- https://valentinesgolfcarts.com/valentines-social-card.jpg
+- https://valentinesgolfcarts.com/valentines-app-icon.png
+
+Image sitemap:
+- https://valentinesgolfcarts.com/sitemap-images.xml
+
+Vehicle photos are part of the live inventory system and are intentionally not duplicated in this static discovery file.
