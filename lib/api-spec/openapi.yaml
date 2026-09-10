@@ -1,0 +1,221 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: inventory
+    description: Live golf cart inventory
+  - name: locations
+    description: Dealership locations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /inventory:
+    get:
+      operationId: getInventory
+      tags: [inventory]
+      summary: Get live golf cart inventory
+      description: Returns currently available golf carts from the DMS feed with facets and summary counts.
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+        - in: query
+          name: make
+          schema: { type: string }
+        - in: query
+          name: model
+          schema: { type: string }
+        - in: query
+          name: power
+          schema: { type: string, enum: [electric, gas] }
+        - in: query
+          name: condition
+          schema: { type: string, enum: [new, used] }
+        - in: query
+          name: seats
+          schema: { type: string }
+        - in: query
+          name: sort
+          schema: { type: string, enum: [featured, price-asc, price-desc, year-desc] }
+      responses:
+        "200":
+          description: Live inventory snapshot
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InventoryResponse"
+        "502":
+          description: DMS unavailable
+  /inventory/featured:
+    get:
+      operationId: getFeaturedInventory
+      tags: [inventory]
+      summary: Get featured golf carts
+      responses:
+        "200":
+          description: Featured live inventory
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InventoryResponse"
+        "502":
+          description: DMS unavailable
+  /locations:
+    get:
+      operationId: getLocations
+      tags: [locations]
+      summary: Get dealership locations
+      responses:
+        "200":
+          description: Dealership locations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Location"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    InventoryResponse:
+      type: object
+      required: [generatedAt, source, summary, facets, carts]
+      properties:
+        generatedAt: { type: string, format: date-time }
+        source: { type: string }
+        summary:
+          $ref: "#/components/schemas/InventorySummary"
+        facets:
+          $ref: "#/components/schemas/InventoryFacets"
+        carts:
+          type: array
+          items:
+            $ref: "#/components/schemas/InventoryCart"
+    InventorySummary:
+      type: object
+      required: [total, new, used, electric, gas, streetLegal, lifted, priceMin, priceMax]
+      properties:
+        total: { type: integer }
+        new: { type: integer }
+        used: { type: integer }
+        electric: { type: integer }
+        gas: { type: integer }
+        streetLegal: { type: integer }
+        lifted: { type: integer }
+        priceMin: { type: ["number", "null"] }
+        priceMax: { type: ["number", "null"] }
+    InventoryFacets:
+      type: object
+      required: [makes, models, colors, seats]
+      properties:
+        makes:
+          type: array
+          items: { $ref: "#/components/schemas/Facet" }
+        models:
+          type: array
+          items: { $ref: "#/components/schemas/Facet" }
+        colors:
+          type: array
+          items: { $ref: "#/components/schemas/Facet" }
+        seats:
+          type: array
+          items: { $ref: "#/components/schemas/Facet" }
+    Facet:
+      type: object
+      required: [key, label, count]
+      properties:
+        key: { type: string }
+        label: { type: string }
+        count: { type: integer }
+        makeKey: { type: ["string", "null"] }
+    InventoryCart:
+      type: object
+      required: [id, slug, make, model, title, price, year, condition, fuel, color, passengers, images]
+      properties:
+        id: { type: string }
+        slug: { type: string }
+        make: { type: string }
+        model: { type: string }
+        title: { type: string }
+        year: { type: string }
+        price: { type: ["number", "null"] }
+        condition: { type: string }
+        fuel: { type: string }
+        color: { type: string }
+        passengers: { type: string }
+        city: { type: string }
+        state: { type: string }
+        stateCode: { type: string }
+        location: { type: string }
+        isStreetLegal: { type: boolean }
+        isLifted: { type: boolean }
+        images:
+          type: array
+          items: { type: string }
+        vin: { type: string }
+        sku: { type: string }
+        serial: { type: string }
+        odometer: { type: ["number", "null"] }
+        hours: { type: ["number", "null"] }
+        warranty: { type: string }
+        specifications:
+          $ref: "#/components/schemas/VehicleSpecifications"
+    VehicleSpecifications:
+      type: object
+      properties:
+        seatColor: { type: string }
+        driveTrain: { type: string }
+        tireType: { type: string }
+        tireRimSize: { type: string }
+        hasSoundSystem: { type: boolean }
+        hasHitch: { type: boolean }
+        hasExtendedTop: { type: boolean }
+        batteryType: { type: string }
+        batteryBrand: { type: string }
+        batteryYear: { type: string }
+        batteryAmpHours: { type: string }
+        batteryVoltage: { type: string }
+        batteryPackVoltage: { type: string }
+        engineMake: { type: string }
+        horsepower: { type: string }
+        stroke: { type: string }
+    Location:
+      type: object
+      required: [slug, city, state, stateCode, cartCount]
+      properties:
+        slug: { type: string }
+        city: { type: string }
+        state: { type: string }
+        stateCode: { type: string }
+        address: { type: string }
+        postalCode: { type: string }
+        phone: { type: string }
+        cartCount: { type: integer }
+        latitude: { type: ["number", "null"] }
+        longitude: { type: ["number", "null"] }
+
