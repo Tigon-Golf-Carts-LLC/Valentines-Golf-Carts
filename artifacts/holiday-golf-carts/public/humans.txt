@@ -1,0 +1,13 @@
+/* SITE */
+Name: Valentines Golf Carts
+Operator: Valentines Golf Carts
+Purpose: One-day Valentine's Day Golf Cart Sales Event on February 14, 2027
+URL: https://valentinesgolfcarts.com/
+Contact: sales@valentinesgolfcarts.com
+
+/* TECHNOLOGY */
+Application: React and Vite
+Languages: TypeScript, HTML, CSS
+
+/* UPDATED */
+Date: 2026-09-09
