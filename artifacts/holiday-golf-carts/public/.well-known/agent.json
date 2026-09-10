@@ -1,0 +1,16 @@
+{
+  "name": "Valentines Golf Carts",
+  "url": "https://valentinesgolfcarts.com/",
+  "description": "Official website for the one-day Valentine's Day Golf Cart Sales Event on February 14, 2027, serving customers nationwide in the United States.",
+  "readOnly": true,
+  "resources": {
+    "overview": "https://valentinesgolfcarts.com/",
+    "inventory": "https://valentinesgolfcarts.com/inventory",
+    "contact": "https://valentinesgolfcarts.com/contact",
+    "siteInfo": "https://valentinesgolfcarts.com/api/site-info.json"
+  },
+  "notes": [
+    "Current vehicle availability is provided by the live inventory page.",
+    "No physical address is published."
+  ]
+}
