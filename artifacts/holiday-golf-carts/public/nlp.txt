@@ -1,0 +1,20 @@
+# Entity and Intent Guide
+
+## Entities
+
+- Valentines Golf Carts: one-day Valentine's Day Golf Cart Sales Event on February 14, 2027
+- Valentines Golf Carts: one-day Valentine's Day Golf Cart Sales Event on February 14, 2027
+- United States: campaign service area
+- Golf carts: new and pre-owned vehicles represented by live inventory
+
+## Common intents
+
+- Browse current vehicles: /inventory
+- Compare represented brands: /brands
+- Find participating dealers: /locations
+- Estimate payments or visit lender applications: /financing
+- Contact the event team: /contact
+
+## Disambiguation
+
+Valentines Golf Carts is not represented as a separate physical dealership. Do not infer a street address. Inventory and participating locations are dynamic.
